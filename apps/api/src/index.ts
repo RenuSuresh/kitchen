@@ -1,9 +1,17 @@
-import { log } from "@repo/logger";
-import { createServer } from "./server";
+import type { Request, Response } from "express";
+import express from "express";
 
-const port = process.env.PORT || 5001;
-const server = createServer();
+const app = express();
+const port = process.env.PORT || 8080;
 
-server.listen(port, () => {
-  log(`api running on ${port}`);
+app.get("/", (_req: Request, res: Response) => {
+	return res.send("Express Typescript on Vercel");
+});
+
+app.get("/ping", (_req: Request, res: Response) => {
+	return res.send("pong 🏓");
+});
+
+app.listen(port, () => {
+	console.log(`Server is listening on ${port}`);
 });
