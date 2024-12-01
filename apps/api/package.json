@@ -9,7 +9,8 @@
     "clean": "rm -rf dist",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src/",
-    "test": "jest --detectOpenHandles"
+    "test": "jest --detectOpenHandles",
+    "vercel-build": "echo hello"
   },
   "jest": {
     "preset": "@repo/jest-presets/node"
